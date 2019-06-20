@@ -4,7 +4,7 @@ namespace App\Models\Classes;
 
 class Curl
 {
-	public function curlmodel($url)
+	public function curlClasses($url)
 	{
 		try {
 

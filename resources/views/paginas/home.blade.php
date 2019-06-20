@@ -8,7 +8,16 @@
 	
 	<h1>Olá Junior</h1>
 
-	<h1>{{$curl}}</h1>
+
+	<div>
+
+		<?php
+			echo '<pre>';
+			print_r($regex[4][1]);
+		?>
+
+	</div>
+
 
 </body>
 </html>

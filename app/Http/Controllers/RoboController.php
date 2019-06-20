@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Classes\Curl;
+use App\Models\Classes\Regex;
 
 class RoboController extends Controller
 {
@@ -21,9 +22,13 @@ class RoboController extends Controller
     	// $curl = $this->curlmodel($url);
     	// return 'Controller é um sucesso!', compact('url');
         $curl = new Curl();
-        $curl = $curl->curlModel($url);
+        $curl = $curl->curlClasses($url);
     	// return 'Controller é um sucesso! {{$curl}}' ;
-    	return view('paginas.home', compact('curl'));
+
+        $regex = new Regex();
+        $regex = $regex->regexClasses($curl);
+
+    	return view('paginas.home', compact('regex'));
 
     }
 }
