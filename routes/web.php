@@ -15,4 +15,8 @@
 //     return view('welcome');
 // });
 
-Route::get('/robo3', 'RoboController@roboController');
+Route::get('/robo3', 'RoboController@get_html_Controller');
+
+Route::get('/insert', 'RoboController@insert');
+
+Route::get('/inserir', 'RoboController@inserir');

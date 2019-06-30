@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+@extends('template.template')
 
-	
+@section('title')
+	Home
+@endsection
+
+@section('content')
+
 	<h1>Olá Junior</h1>
-
 
 	<div>
 
-		<?php
-			echo '<pre>';
-			print_r($regex[4][1]);
-		?>
+
+
+		{{$foi}}
+
+		{{$insert}}
 
 	</div>
 
-
-</body>
-</html>
+@endsection

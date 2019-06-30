@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>@yield('title')</title>
 </head>
 <body>
 
-	<!-- {{$curl}} -->
-	<h1>Olá Junior</h1>
+	@yield('content')
 
 </body>
 </html>
