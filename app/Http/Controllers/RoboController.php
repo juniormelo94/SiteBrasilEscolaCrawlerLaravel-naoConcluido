@@ -11,12 +11,6 @@ use App\Models\Classes\Regex;
 class RoboController extends Controller
 {
 
-    private $theme;
-
-    public function __construct(Theme $theme)
-    {
-        $this->theme = $theme;
-    }
 
     public function get_html_Controller()
     {
@@ -31,22 +25,31 @@ class RoboController extends Controller
     	return view('paginas.home', compact('regex'));
     }
 
+
     public function insert()
     {
-        $insert = $this->theme->insertGetId([
-            'theme'        => 'Arte',
-            'link_theme'   => 'https://artehgjrtrtygtt7j435hy6765'
-        ]);
+        $themes = new Theme();
+        $themes->theme = 'Arte';
+        $themes->link_theme = 'https://artehgjrtrtygtt7j435hy6765';
+        $themes->save();
+        $themes_id = $themes->id;
 
-        if($insert){
+        $subtopics = new Subtopic();
+        $subtopics->id_theme = $themes_id;
+        $subtopics->subtopic = 'historia da arte';
+        $subtopics->link_subtopic = 'https://artehgjrtrtygtt7j435hy6765';
+        $subtopics->save();
+
+        if($subtopics){
             $foi = 'Inserido com sucesso!';
-            return view('paginas.home', compact('foi', 'insert'));
+            return view('paginas.home', compact('foi', 'themes_id'));
         }
         else{
             $foi = 'Falha ao tentar inserir!';
             return view('paginas.home', compact('foi'));
         }
     }
+
 
 
 

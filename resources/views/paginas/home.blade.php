@@ -14,7 +14,7 @@
 
 		{{$foi}}
 
-		{{$insert}}
+		{{$themes_id}}
 
 	</div>
 
