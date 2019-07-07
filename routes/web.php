@@ -14,9 +14,12 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/', 'RoboController@welcome');
 
-Route::get('/robo3', 'RoboController@get_html_Controller');
+Route::get('/teste_drive', 'RoboController@teste_drive');
 
-Route::get('/insert', 'RoboController@insert');
+Route::get('/buscar', 'RoboController@buscar');
+
+Route::get('/salvar', 'RoboController@salvar');
 
 Route::get('/inserir', 'RoboController@inserir');

@@ -12,7 +12,19 @@ class RoboController extends Controller
 {
 
 
-    public function get_html_Controller()
+    public function welcome()
+    {
+        return view('paginas.home');
+    }
+
+
+    public function teste_drive()
+    {
+        return view('paginas.testeDrive');
+    }
+
+
+    public function buscar()
     {
         $url = 'https://brasilescola.uol.com.br/matematica/graficos.htm';
 
@@ -22,31 +34,42 @@ class RoboController extends Controller
         $regex = new Regex();
         $regex = $regex->regexClasses($curl);
 
-    	return view('paginas.home', compact('regex'));
+    	return view('paginas.testeDrive', compact('regex'));
     }
 
 
-    public function insert()
+    public function salvar()
     {
         $themes = new Theme();
-        $themes->theme = 'Arte';
-        $themes->link_theme = 'https://artehgjrtrtygtt7j435hy6765';
-        $themes->save();
-        $themes_id = $themes->id;
-
         $subtopics = new Subtopic();
-        $subtopics->id_theme = $themes_id;
-        $subtopics->subtopic = 'historia da arte';
-        $subtopics->link_subtopic = 'https://artehgjrtrtygtt7j435hy6765';
-        $subtopics->save();
+
+            foreach ($regex as $key => $temas) {
+
+            $themes->theme = $temas[$key]['tema'];
+            $themes->link_theme = $temas[$key]['link_tema'];
+            $themes->save();
+            $themes_id = $themes->id;
+
+            foreach ($temas[$key] as $key => $subtemas) {
+                
+                $subtopics->id_theme = $themes_id;
+                $subtopics->subtopic = $subtemas[$key]['subtema'];
+                $subtopics->link_subtopic = $subtemas[$key]['link_subtema'];
+
+            }
+
+
+        }
+
+
 
         if($subtopics){
             $foi = 'Inserido com sucesso!';
-            return view('paginas.home', compact('foi', 'themes_id'));
+            return view('paginas.testeDrive', compact('foi', 'themes_id'));
         }
         else{
             $foi = 'Falha ao tentar inserir!';
-            return view('paginas.home', compact('foi'));
+            return view('paginas.testeDrive', compact('foi'));
         }
     }
 
