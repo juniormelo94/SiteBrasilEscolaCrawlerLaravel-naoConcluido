@@ -23,8 +23,11 @@
 	      </div>
 	    </div>
 	  </section>
+	  <?php
+	  	$msg = '';
+	  ?>
 
-	  {{$foi}}
+	  	{{$msg}}
 
 	  <!-- Services Section -->
 	  <section class="page-section" id="services">

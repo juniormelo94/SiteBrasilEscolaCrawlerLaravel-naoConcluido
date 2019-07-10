@@ -14,12 +14,12 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', 'RoboController@welcome');
+Route::get('/', 'welcomeController@welcome');
 
-Route::get('/teste_drive', 'RoboController@teste_drive');
+Route::get('/teste_drive', 'welcomeController@teste_drive');
 
-Route::get('/buscar', 'RoboController@buscar');
+Route::get('/buscar', 'SiteBrasilEscolaCrowlerController@buscar');
 
-Route::get('/salvar', 'RoboController@salvar');
+Route::get('/salvar', 'SiteBrasilEscolaCrowlerController@salvar');
 
-Route::get('/inserir', 'RoboController@inserir');
+Route::get('/inserir', 'SiteBrasilEscolaCrowlerController@inserir');

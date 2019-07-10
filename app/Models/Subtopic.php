@@ -9,4 +9,28 @@ class Subtopic extends Model
     protected $fillable = [
 	    'id_theme', 'subtopic', 'link_subtopic'
 	];
+
+	/*
+	 *Insere os dados na tabela Subtopic
+	 *
+	 *@params array $data
+	 *@params int $idTheme
+	 *
+	 *@return boolean
+	 */
+	public function insert($data, $idTheme){
+
+		$this->id_theme = $idTheme;
+		$this->subtopic = $data['subtema'];
+		$this->link_subtopic = $data['link_subtema'];
+
+		if ($this->save()) {
+			return true;
+		}
+
+		return false;
+
+	}
+
+
 }
