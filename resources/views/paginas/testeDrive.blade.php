@@ -6,8 +6,6 @@
 
 @section('content')
 
-	</div>
-
 	<!-- About Section -->
 	  <section class="page-section bg-primary" id="about">
 	    <div class="container">
@@ -15,19 +13,24 @@
 	        <div class="col-lg-8 text-center">
 	          <h2 class="text-white mt-0">Como funciona o Teste Drive</h2>
 	          <hr class="divider light my-4">
-	          <p class="text-white-50 mb-4">Clique em buscar, para que o nosso Robô pegue as informações, depois precisaremos salvar e por fim exibir em tela!</p>
-	          <a class="btn btn-dark btn-xl js-scroll-trigger" href="{{url('buscar')}}">BUSCAR</a>
-	          <a class="btn btn-dark btn-xl js-scroll-trigger ml-4 mr-4" href="#services">SALVAR</a>
-	          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">EXIBIR</a>
+	          <p class="text-white-50 mb-4">Clique em buscar, para que o nosso Crawler pegue as informações necessárias e as salve no nosso banco. E por fim é só exibir em tela!</p>
+	          <a class="btn btn-dark btn-xl js-scroll-trigger mr-2" href="{{url('buscar')}}">BUSCAR</a>
+	          <a class="btn btn-dark btn-xl js-scroll-trigger ml-2 btn-exibir" data-toggle="modal" data-target="#modalMenu">EXIBIR</a>
+	          <h5 class="mt-3">
+	          	@if(isset($msg))
+				  	{{$msg}}
+				@endif
+	          </h5>
 	        </div>
 	      </div>
 	    </div>
 	  </section>
-	  <?php
-	  	$msg = '';
-	  ?>
 
-	  	{{$msg}}
+	  <!-- Botão para acionar modal -->
+		<button type="button" class="btn btn-dark btn-xl js-scroll-trigger ml-2" data-toggle="modal" data-target="#ExemploModalCentralizado">
+		  Abrir modal de demonstração
+		</button>
+
 
 	  <!-- Services Section -->
 	  <section class="page-section" id="services">

@@ -22,20 +22,12 @@ class Theme extends Model
 
 		$this->theme = $data['tema'];
 		$this->link_theme = $data['link_tema'];
-		$this->save();
 
-        return $this->id;
-
-	}
-
-
-	public function validar($data){
-
-		$verSerExiste = $this->where('theme', $data)->get();
-
-		return $verSerExiste;
+        if ($this->save()) {
+			return $this->id;
+		}
+		return false;
 
 	}
-
 
 }

@@ -21,19 +21,26 @@ class SiteBrasilEscolaCrowlerController extends Controller
         $regex = new Regex();
         $regex = $regex->regexClasses($curl);
 
-        foreach ($regex as $theme) {
+        foreach ($regex as $theme) 
+        {
 
             $themes = new Theme();
-            $validateDate = $themes->validar($theme['tema']);
+            $validateDate = $themes->where('theme', $theme['tema'])->first();
 
 
-            if (empty($validateData)){
+            // echo '<pre>';
+            // print_r($validateDate);
+            // exit();
+
+            if ($validateDate)
+            {
                 continue;
             }
 
             $idTheme = $themes->insert($theme);
 
-            foreach ($theme['subtemas'] as $subtopic) {
+            foreach ($theme['subtemas'] as $subtopic)
+            {
 
                 $subtopics = new Subtopic();
                 $subtopics->insert($subtopic, $idTheme);
@@ -42,18 +49,15 @@ class SiteBrasilEscolaCrowlerController extends Controller
 
         }
 
+        if(isset($subtopics))
+        {
+            $msg = 'Informações salvas com sucesso.';
+            return view('paginas.testeDrive', compact('msg'));
+        }
 
-        if($validateDate){
-            $msg = 'Inserido com sucesso!';
-            return view('paginas.testeDrive', compact('msg'));
-        }
-        else{
-            $msg = 'Falha ao tentar inserir!';
-            return view('paginas.testeDrive', compact('msg'));
-        }
+        $msg = 'Informações já existentes no banco.';
+        return view('paginas.testeDrive', compact('msg'));
 
     }
-
-
 
 }

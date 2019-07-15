@@ -18,5 +18,4 @@ class welcomeController extends Controller
         return view('paginas.testeDrive');
     }
 
-
 }
