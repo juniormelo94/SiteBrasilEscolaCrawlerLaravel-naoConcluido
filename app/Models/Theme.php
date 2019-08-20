@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Theme extends Model
 {
     protected $fillable = [
-	    'theme','link_theme'
+	    'theme',
+	    'link_theme'
 	];
-
 
 	/*
 	 *Insere os dados na tabela theme
@@ -19,15 +19,13 @@ class Theme extends Model
 	 *@return int
 	 */
 	public function insert($data){
-
 		$this->theme = $data['tema'];
 		$this->link_theme = $data['link_tema'];
 
         if ($this->save()) {
 			return $this->id;
 		}
+
 		return false;
-
 	}
-
 }

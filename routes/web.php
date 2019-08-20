@@ -20,6 +20,10 @@ Route::get('/teste_drive', 'welcomeController@teste_drive');
 
 Route::get('/buscar', 'SiteBrasilEscolaCrowlerController@buscar');
 
-Route::get('/salvar', 'SiteBrasilEscolaCrowlerController@salvar');
+Route::get('/exibir', 'SiteBrasilEscolaCrowlerController@exibir');
 
 Route::get('/inserir', 'SiteBrasilEscolaCrowlerController@inserir');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

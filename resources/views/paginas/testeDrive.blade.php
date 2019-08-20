@@ -1,21 +1,16 @@
 @extends('template.template')
 
-@section('title')
-	Teste Drive
-@endsection
-
 @section('content')
-
 	<!-- About Section -->
 	  <section class="page-section bg-primary" id="about">
 	    <div class="container">
 	      <div class="row justify-content-center">
 	        <div class="col-lg-8 text-center">
-	          <h2 class="text-white mt-0">Como funciona o Teste Drive</h2>
+	          <h2 class="text-white mt-0">Como funciona</h2>
 	          <hr class="divider light my-4">
 	          <p class="text-white-50 mb-4">Clique em buscar, para que o nosso Crawler pegue as informações necessárias e as salve no nosso banco. E por fim é só exibir em tela!</p>
 	          <a class="btn btn-dark btn-xl js-scroll-trigger mr-2" href="{{url('buscar')}}">BUSCAR</a>
-	          <a class="btn btn-dark btn-xl js-scroll-trigger ml-2 btn-exibir" data-toggle="modal" data-target="#modalMenu">EXIBIR</a>
+	          <a class="btn btn-dark btn-xl js-scroll-trigger mr-2" href="{{url('exibir')}}">EXIBIR</a>
 	          <h5 class="mt-3">
 	          	@if(isset($msg))
 				  	{{$msg}}
@@ -25,12 +20,6 @@
 	      </div>
 	    </div>
 	  </section>
-
-	  <!-- Botão para acionar modal -->
-		<button type="button" class="btn btn-dark btn-xl js-scroll-trigger ml-2" data-toggle="modal" data-target="#ExemploModalCentralizado">
-		  Abrir modal de demonstração
-		</button>
-
 
 	  <!-- Services Section -->
 	  <section class="page-section" id="services">
@@ -163,5 +152,4 @@
 	      <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
 	    </div>
 	  </section>
-
 @endsection

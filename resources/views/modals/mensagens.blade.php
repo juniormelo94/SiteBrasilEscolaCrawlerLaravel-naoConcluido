@@ -1,10 +1,7 @@
-
 @yield('templateHead')
 
 @yield('templateBody')
-
-    <!-- Modal Menu Site Brasil Escola -->
- 
+    <!-- Modal Mensagens -->
 	    <div class="modal fade" id="modalMenu" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
 	      <div class="modal-dialog modal-dialog-centered max-width" role="document">
 	        <div class="modal-content">
@@ -15,17 +12,7 @@
 	            </button>
 	          </div>
 	          <div class="modal-body">
-	            <ul class="ulMenu">
-		          	<li class="liTemas">
-		          		111
-		          	</li>
-		          	<li class="liTemas">
-		          		222
-		          	</li>
-		          	<li class="liTemas">
-		          		333
-		          	</li>
-		        </ul>
+				<!-- Mensagens. -->
 	          </div>
 	          <div class="modal-footer">
 	            <button type="button" class="btn btn-secondary" data-dismiss="modal">     Fechar  
@@ -34,5 +21,4 @@
 	        </div>
 	      </div>
 	    </div>
-
 @yield('templateFooter')

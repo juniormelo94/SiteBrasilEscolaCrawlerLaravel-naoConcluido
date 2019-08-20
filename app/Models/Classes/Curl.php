@@ -7,7 +7,6 @@ class Curl
 	public function curlClasses($url)
 	{
 		try {
-
 			$ch = curl_init();
 			// Seta algumas opções
 			curl_setopt($ch, CURLOPT_URL, $url);
@@ -18,18 +17,13 @@ class Curl
 			// Envia a requisição e salva a resposta
 			$response = curl_exec($ch);
 			// Conferir se houve algum error.
-			if(curl_exec($ch) == false)
-			{
+			if(curl_exec($ch) == false){
 			    echo 'Curl error: '.curl_error($ch);
 			}
 			// Fecha a requisição e limpa a memória
 			curl_close($ch);
 
 			return $response;
-			// return	[
-			// 		'status' => 'success',
-			// 		'dados' => $response
-			// 		];
 			
 		} catch (Exception $e) {
 			return	[

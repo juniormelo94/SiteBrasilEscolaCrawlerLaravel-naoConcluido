@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Subtopic extends Model
 {
     protected $fillable = [
-	    'id_theme', 'subtopic', 'link_subtopic'
+	    'theme_id',
+	    'subtopic',
+	    'link_subtopic'
 	];
 
 	/*
@@ -18,9 +20,9 @@ class Subtopic extends Model
 	 *
 	 *@return boolean
 	 */
-	public function insert($data, $idTheme){
-
-		$this->id_theme = $idTheme;
+	public function insert($data, $idTheme)
+	{
+		$this->theme_id = $idTheme;
 		$this->subtopic = $data['subtema'];
 		$this->link_subtopic = $data['link_subtema'];
 
@@ -29,7 +31,6 @@ class Subtopic extends Model
 		}
 
 		return false;
-
 	}
 
 

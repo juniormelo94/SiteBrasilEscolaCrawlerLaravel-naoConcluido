@@ -1,9 +1,7 @@
-@extends('modals.menuSiteBrasilEscola')
+@extends('modals.mensagens')
 
 @section('templateHead')
-
 	<!DOCTYPE html>
-
 	<html lang="en">
 		<head>
 			  <meta charset="utf-8">
@@ -11,7 +9,7 @@
 			  <meta name="description" content="">
 			  <meta name="author" content="">
 
-			  <title>@yield('title')</title>
+			  <title>Crawler</title>
 
 			  <!-- Font Awesome Icons -->
 			  <link href="https://blackrockdigital.github.io/startbootstrap-creative/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,17 +26,14 @@
 
 			  <link href="{{ asset('css/estilo.css') }}" rel="stylesheet"> 
 		</head>
-
 @endsection
 
 @section('templateBody')
-
 		<body id="page-top">
-
 		  <!-- Navigation -->
 		  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 		    <div class="container">
-		      <a class="navbar-brand js-scroll-trigger" href="#page-top">Crawler3</a>
+		      <a class="navbar-brand js-scroll-trigger" href="#page-top">Crawler</a>
 		      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		        <span class="navbar-toggler-icon"></span>
 		      </button>
@@ -66,7 +61,7 @@
 		    <div class="container h-100">
 		      <div class="row h-100 align-items-center justify-content-center text-center">
 		        <div class="col-lg-10 align-self-end">
-		          <h1 class="text-uppercase text-white font-weight-bold">Curl + Laravel = Crawler3</h1>
+		          <h1 class="text-uppercase text-white font-weight-bold">Curl + Laravel = Crawler</h1>
 		          <hr class="divider my-4">
 		        </div>
 		        <div class="col-lg-8 align-self-baseline">
@@ -100,11 +95,9 @@
 		      </div>
 		    </div>
 		  </section>
-
 @endsection
 
 @section('templateFooter')
-
 		  <!-- Footer -->
 		  <footer class="bg-light py-5">
 		    <div class="container">
@@ -124,7 +117,5 @@
 		  <script src="https://blackrockdigital.github.io/startbootstrap-creative/js/creative.min.js"></script>
 
 		</body>
-
 	</html>
-
 @endsection

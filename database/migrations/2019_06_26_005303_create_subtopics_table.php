@@ -14,16 +14,12 @@ class CreateSubtopicsTable extends Migration
     public function up()
     {
         Schema::create('subtopics', function (Blueprint $table) {
-            $table->bigIncrements('id_subtopic');
-            $table->integer('id_theme')->unsigned();
-            $table->string('subtopic', 150);
-            $table->string('link_subtopic', 50);
+            $table->bigIncrements('id');
+            $table->string('subtopic', 50);
+            $table->string('link_subtopic', 150);
+            $table->bigInteger('theme_id')->unsigned();
+            $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
             $table->timestamps();
-            $table->foreign('id_theme')
-                ->references('id_theme')->on('themes');
-
-            // link de ajuda para tabelas relacionadas:
-            //https://www.youtube.com/watch?v=gc5LByf3nL4
         });
     }
 
